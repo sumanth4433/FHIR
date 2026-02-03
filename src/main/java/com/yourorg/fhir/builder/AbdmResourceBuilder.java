@@ -5,6 +5,7 @@ import org.hl7.fhir.r4.model.*;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -838,6 +839,94 @@ public class AbdmResourceBuilder {
                 section.addEntry(new Reference("urn:uuid:" + doc.getId()).setType("DocumentReference"));
             }
         }
+
+        return comp;
+    }
+
+    public ChargeItem buildChargeItem(Patient patient, String itemName, int quantity) {
+        ChargeItem item = new ChargeItem();
+        item.setId(UUID.randomUUID().toString());
+        item.setMeta(new Meta().addProfile("https://nrces.in/ndhm/fhir/r4/StructureDefinition/ChargeItem"));
+        item.setStatus(ChargeItem.ChargeItemStatus.BILLED); // Per example
+
+        // Code
+        CodeableConcept code = new CodeableConcept();
+        code.addCoding(new Coding("https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-billing-codes", "05", "Medicines")); // Simplified
+                                                                                                                      // mapping
+        code.setText(itemName);
+        item.setCode(code);
+
+        // Product (Required by profile)
+        item.setProduct(new CodeableConcept().setText(itemName));
+
+        item.setSubject(new Reference("urn:uuid:" + patient.getId()));
+        item.setQuantity(new Quantity(quantity));
+        // Remove priceOverride as it belongs in Invoice.lineItem
+
+        return item;
+    }
+
+    public Invoice buildInvoice(Patient patient, java.util.List<ChargeItem> items, java.util.List<Double> unitPrices,
+            double totalAmount,
+            String currency) {
+        Invoice invoice = new Invoice();
+        invoice.setId(UUID.randomUUID().toString());
+        invoice.addIdentifier().setValue(UUID.randomUUID().toString());
+        invoice.setMeta(new Meta().addProfile("https://nrces.in/ndhm/fhir/r4/StructureDefinition/Invoice"));
+        invoice.setStatus(Invoice.InvoiceStatus.ISSUED);
+        invoice.setDate(new Date());
+
+        // Type
+        CodeableConcept type = new CodeableConcept();
+        type.addCoding(new Coding("https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-billing-codes", "01", "Pharmacy"));
+        invoice.setType(type);
+
+        invoice.setSubject(new Reference("urn:uuid:" + patient.getId()));
+        invoice.setTotalNet(new Money().setValue(totalAmount).setCurrency(currency));
+        invoice.setTotalGross(new Money().setValue(totalAmount).setCurrency(currency));
+
+        int i = 0;
+        for (ChargeItem item : items) {
+            double price = unitPrices.size() > i ? unitPrices.get(i) : 0.0;
+            Invoice.InvoiceLineItemComponent lineItem = invoice.addLineItem();
+            lineItem.setSequence(i + 1);
+            lineItem.setChargeItem(new Reference("urn:uuid:" + item.getId()));
+
+            // Base Price
+            Invoice.InvoiceLineItemPriceComponentComponent basePrice = lineItem.addPriceComponent();
+            basePrice.setType(Invoice.InvoicePriceComponentType.BASE);
+            basePrice.setCode(new CodeableConcept().addCoding(
+                    new Coding("https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components", "01", "Rate")));
+            basePrice.setAmount(new Money().setValue(price).setCurrency(currency));
+
+            // MRP (Informational) - assuming same as base for simplicity if not provided
+            Invoice.InvoiceLineItemPriceComponentComponent mrp = lineItem.addPriceComponent();
+            mrp.setType(Invoice.InvoicePriceComponentType.INFORMATIONAL);
+            mrp.setCode(new CodeableConcept().addCoding(
+                    new Coding("https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components", "00", "MRP")));
+            mrp.setAmount(new Money().setValue(price).setCurrency(currency));
+
+            i++;
+        }
+
+        return invoice;
+    }
+
+    public Composition buildInvoiceComposition(Patient patient, Practitioner author, Date date, Invoice invoice) {
+        Composition comp = new Composition();
+        comp.setId(UUID.randomUUID().toString());
+        comp.setMeta(new Meta().addProfile("https://nrces.in/ndhm/fhir/r4/StructureDefinition/InvoiceRecord"));
+        comp.setStatus(Composition.CompositionStatus.FINAL);
+        comp.setDate(date);
+        comp.setTitle("Pharmacy Invoice Record");
+        comp.setType(new CodeableConcept().setText("Invoice Record"));
+
+        comp.setSubject(new Reference("urn:uuid:" + patient.getId()));
+        comp.addAuthor(new Reference("urn:uuid:" + author.getId()));
+
+        Composition.SectionComponent section = comp.addSection();
+        section.setTitle("Invoicing");
+        section.addEntry(new Reference("urn:uuid:" + invoice.getId()).setType("Invoice"));
 
         return comp;
     }

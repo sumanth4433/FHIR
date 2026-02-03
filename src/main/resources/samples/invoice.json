@@ -1,0 +1,17 @@
+{
+    "patient_id": "91-2345-6789-0123",
+    "patient_name": "Ramesh Kumar",
+    "patient_gender": "male",
+    "patient_dob": "1985-03-12",
+    "visit_date": "2026-01-24",
+    "practitioner_name": "Dr. Anil Sharma",
+    "total_amount": 500.0,
+    "currency": "INR",
+    "line_items": [
+        {
+            "item_name": "OP Consultation Fee",
+            "quantity": 1,
+            "unit_price": 500.0
+        }
+    ]
+}

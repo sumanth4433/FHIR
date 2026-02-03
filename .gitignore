@@ -32,3 +32,4 @@ logs/
 *.old
 
 validator_cli.jar
+/FHIR_ABHA_JSON/

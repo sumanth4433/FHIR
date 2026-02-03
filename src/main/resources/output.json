@@ -1,537 +1,185 @@
 {
   "resourceType": "Bundle",
-  "id": "df27bfac-09f1-40bb-a95a-9697add2c7b6",
+  "id": "43c12a90-3612-4ac8-b672-714fcaf091ff",
   "meta": {
     "versionId": "1",
-    "profile": [
-      "https://nrces.in/ndhm/fhir/r4/StructureDefinition/DocumentBundle"
-    ]
+    "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/DocumentBundle" ]
   },
   "identifier": {
     "system": "https://www.xyz-hospital.com/bundles",
-    "value": "0bfc6978-2b6c-4632-98b7-eb8631fdf5a1"
+    "value": "2cc1cf8b-dda8-478a-9480-3960b23135a8"
   },
   "type": "document",
-  "timestamp": "2023-11-15T00:00:00.000+00:00",
-  "entry": [
-    {
-      "fullUrl": "urn:uuid:4cbc0d14-aef6-4158-b28e-f90511efca19",
-      "resource": {
-        "resourceType": "Composition",
-        "id": "4cbc0d14-aef6-4158-b28e-f90511efca19",
-        "meta": {
-          "profile": [
-            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/OPConsultRecord"
-          ]
-        },
-        "status": "final",
+  "timestamp": "2026-02-03T12:15:14.208+00:00",
+  "entry": [ {
+    "fullUrl": "urn:uuid:398a8a7a-24e3-4ab4-895d-5deb35b15c78",
+    "resource": {
+      "resourceType": "Composition",
+      "id": "398a8a7a-24e3-4ab4-895d-5deb35b15c78",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/InvoiceRecord" ]
+      },
+      "status": "final",
+      "type": {
+        "text": "Invoice Record"
+      },
+      "subject": {
+        "reference": "urn:uuid:a4b5d755-dd0b-4f40-a022-7e4defdef8be"
+      },
+      "date": "2026-01-24T00:00:00+00:00",
+      "author": [ {
+        "reference": "urn:uuid:fd796098-f678-4466-9031-8876182cb4cb"
+      } ],
+      "title": "Pharmacy Invoice Record",
+      "section": [ {
+        "title": "Invoicing",
+        "entry": [ {
+          "reference": "urn:uuid:7f62f990-8a3f-408c-b07f-01684390ff9e",
+          "type": "Invoice"
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:a4b5d755-dd0b-4f40-a022-7e4defdef8be",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "a4b5d755-dd0b-4f40-a022-7e4defdef8be",
+      "meta": {
+        "versionId": "1",
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Patient" ]
+      },
+      "identifier": [ {
         "type": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "371530004",
-              "display": "Clinical consultation report"
-            }
-          ]
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR",
+            "display": "Medical record number"
+          } ]
         },
-        "subject": {
-          "reference": "urn:uuid:1d2825b1-9754-44a5-8065-a9a0b7fdc4de",
-          "type": "Patient"
+        "system": "https://healthid.ndhm.gov.in",
+        "value": "91-2345-6789-0123"
+      } ],
+      "name": [ {
+        "text": "Ramesh Kumar"
+      } ],
+      "gender": "male",
+      "birthDate": "1985-03-12"
+    }
+  }, {
+    "fullUrl": "urn:uuid:fd796098-f678-4466-9031-8876182cb4cb",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "fd796098-f678-4466-9031-8876182cb4cb",
+      "meta": {
+        "versionId": "1",
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Practitioner" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "Medical License number"
+          } ]
         },
-        "encounter": {
-          "reference": "urn:uuid:9515a02d-81da-4107-a3b3-21bcdf911763",
-          "type": "Encounter"
+        "system": "https://doctor.ndhm.gov.in",
+        "value": "Medical Practitioner"
+      } ],
+      "name": [ {
+        "text": "Dr. Anil Sharma"
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:7f62f990-8a3f-408c-b07f-01684390ff9e",
+    "resource": {
+      "resourceType": "Invoice",
+      "id": "7f62f990-8a3f-408c-b07f-01684390ff9e",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Invoice" ]
+      },
+      "identifier": [ {
+        "value": "cd8511b8-d614-48a4-b72e-2240fee36d3e"
+      } ],
+      "status": "issued",
+      "type": {
+        "coding": [ {
+          "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-billing-codes",
+          "code": "01",
+          "display": "Pharmacy"
+        } ]
+      },
+      "subject": {
+        "reference": "urn:uuid:a4b5d755-dd0b-4f40-a022-7e4defdef8be"
+      },
+      "date": "2026-02-03T12:15:14+00:00",
+      "lineItem": [ {
+        "sequence": 1,
+        "chargeItemReference": {
+          "reference": "urn:uuid:b6cc2417-ff6d-4584-8a96-10f154363e51"
         },
-        "date": "2023-11-15T00:00:00+00:00",
-        "author": [
-          {
-            "reference": "urn:uuid:1c9ae8c3-7e20-41aa-ae0c-c703bf6cb1dd",
-            "type": "Practitioner"
-          }
-        ],
-        "title": "OP Consult Record (Composite)",
-        "section": [
-          {
-            "title": "Diagnosis",
-            "entry": [
-              {
-                "reference": "urn:uuid:4684866d-0a1f-449b-9feb-ee25a388a26b",
-                "type": "Condition"
-              }
-            ]
+        "priceComponent": [ {
+          "type": "base",
+          "code": {
+            "coding": [ {
+              "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code": "01",
+              "display": "Rate"
+            } ]
           },
-          {
-            "title": "Medications",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "440545006",
-                  "display": "Prescription record (record artifact)"
-                }
-              ]
-            },
-            "entry": [
-              {
-                "reference": "urn:uuid:1dbf54ee-1bba-478b-ab43-d0266e5a3f46",
-                "type": "MedicationRequest"
-              }
-            ]
+          "amount": {
+            "value": 500.0,
+            "currency": "INR"
+          }
+        }, {
+          "type": "informational",
+          "code": {
+            "coding": [ {
+              "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code": "00",
+              "display": "MRP"
+            } ]
           },
-          {
-            "title": "Diagnostic Reports",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "721981007",
-                  "display": "Diagnostic studies report (record artifact)"
-                }
-              ]
-            },
-            "entry": [
-              {
-                "reference": "urn:uuid:1ab59adb-6d14-4244-bbb4-92fa1c2331b3",
-                "type": "DiagnosticReport"
-              }
-            ]
-          },
-          {
-            "title": "Vital Signs",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "46680005",
-                  "display": "Vital signs"
-                }
-              ]
-            },
-            "entry": [
-              {
-                "reference": "urn:uuid:2acb0ad8-7f12-4b18-b57a-c1655e54a562",
-                "type": "Observation"
-              },
-              {
-                "reference": "urn:uuid:1eeb7ec4-5b63-4ab1-9f66-7bb747e0ddc6",
-                "type": "Observation"
-              }
-            ]
+          "amount": {
+            "value": 500.0,
+            "currency": "INR"
           }
-        ]
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:1d2825b1-9754-44a5-8065-a9a0b7fdc4de",
-      "resource": {
-        "resourceType": "Patient",
-        "id": "1d2825b1-9754-44a5-8065-a9a0b7fdc4de",
-        "meta": {
-          "versionId": "1",
-          "profile": [
-            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Patient"
-          ]
-        },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                  "code": "MR",
-                  "display": "Medical record number"
-                }
-              ]
-            },
-            "system": "https://healthid.ndhm.gov.in",
-            "value": "P123"
-          }
-        ],
-        "name": [
-          {
-            "text": "John Doe"
-          }
-        ],
-        "gender": "unknown"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:1c9ae8c3-7e20-41aa-ae0c-c703bf6cb1dd",
-      "resource": {
-        "resourceType": "Practitioner",
-        "id": "1c9ae8c3-7e20-41aa-ae0c-c703bf6cb1dd",
-        "meta": {
-          "versionId": "1",
-          "profile": [
-            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Practitioner"
-          ]
-        },
-        "identifier": [
-          {
-            "type": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                  "code": "MD",
-                  "display": "Medical License number"
-                }
-              ]
-            },
-            "system": "https://doctor.ndhm.gov.in",
-            "value": "LIC-99999"
-          }
-        ],
-        "name": [
-          {
-            "text": "Dr. Smith"
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:9515a02d-81da-4107-a3b3-21bcdf911763",
-      "resource": {
-        "resourceType": "Encounter",
-        "id": "9515a02d-81da-4107-a3b3-21bcdf911763",
-        "meta": {
-          "profile": [
-            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Encounter"
-          ]
-        },
-        "status": "finished",
-        "class": {
-          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-          "code": "IMP",
-          "display": "inpatient encounter"
-        },
-        "subject": {
-          "reference": "urn:uuid:1d2825b1-9754-44a5-8065-a9a0b7fdc4de",
-          "type": "Patient"
-        },
-        "participant": [
-          {
-            "individual": {
-              "reference": "urn:uuid:1c9ae8c3-7e20-41aa-ae0c-c703bf6cb1dd",
-              "type": "Practitioner"
-            }
-          }
-        ],
-        "period": {
-          "start": "2023-11-15T00:00:00+00:00",
-          "end": "2023-11-15T00:00:00+00:00"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:4684866d-0a1f-449b-9feb-ee25a388a26b",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "4684866d-0a1f-449b-9feb-ee25a388a26b",
-        "meta": {
-          "profile": [
-            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Condition"
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "38341003",
-              "display": "Hypertension"
-            }
-          ],
-          "text": "Essential Hypertension"
-        },
-        "subject": {
-          "reference": "urn:uuid:1d2825b1-9754-44a5-8065-a9a0b7fdc4de",
-          "type": "Patient"
-        },
-        "recordedDate": "2023-11-15T00:00:00+00:00"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:1dbf54ee-1bba-478b-ab43-d0266e5a3f46",
-      "resource": {
-        "resourceType": "MedicationRequest",
-        "id": "1dbf54ee-1bba-478b-ab43-d0266e5a3f46",
-        "meta": {
-          "profile": [
-            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/MedicationRequest"
-          ]
-        },
-        "status": "active",
-        "intent": "order",
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "322236009",
-              "display": "Acetaminophen 500 mg oral tablet"
-            }
-          ],
-          "text": "Acetaminophen 500 mg oral tablet"
-        },
-        "subject": {
-          "reference": "urn:uuid:1d2825b1-9754-44a5-8065-a9a0b7fdc4de",
-          "type": "Patient"
-        },
-        "authoredOn": "2023-11-15T00:00:00+00:00",
-        "requester": {
-          "reference": "urn:uuid:1c9ae8c3-7e20-41aa-ae0c-c703bf6cb1dd",
-          "type": "Practitioner"
-        },
-        "reasonReference": [
-          {
-            "reference": "urn:uuid:4684866d-0a1f-449b-9feb-ee25a388a26b",
-            "type": "Condition"
-          }
-        ],
-        "dosageInstruction": [
-          {
-            "text": "Once daily after food"
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:2acb0ad8-7f12-4b18-b57a-c1655e54a562",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "2acb0ad8-7f12-4b18-b57a-c1655e54a562",
-        "meta": {
-          "profile": [
-            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Observation",
-            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/ObservationVitalSigns",
-            "http://hl7.org/fhir/StructureDefinition/bodyweight"
-          ]
-        },
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "vital-signs",
-                "display": "Vital Signs"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "29463-7",
-              "display": "Body weight"
-            }
-          ],
-          "text": "Body Weight"
-        },
-        "subject": {
-          "reference": "urn:uuid:1d2825b1-9754-44a5-8065-a9a0b7fdc4de",
-          "type": "Patient"
-        },
-        "effectiveDateTime": "2023-11-15T00:00:00+00:00",
-        "performer": [
-          {
-            "reference": "urn:uuid:1d2825b1-9754-44a5-8065-a9a0b7fdc4de",
-            "type": "Patient"
-          }
-        ],
-        "valueQuantity": {
-          "value": 70,
-          "unit": "kg",
-          "system": "http://unitsofmeasure.org",
-          "code": "kg"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:1eeb7ec4-5b63-4ab1-9f66-7bb747e0ddc6",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "1eeb7ec4-5b63-4ab1-9f66-7bb747e0ddc6",
-        "meta": {
-          "profile": [
-            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Observation",
-            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/ObservationVitalSigns",
-            "http://hl7.org/fhir/StructureDefinition/bodyheight"
-          ]
-        },
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "vital-signs",
-                "display": "Vital Signs"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "8302-2",
-              "display": "Body height"
-            }
-          ],
-          "text": "Body Height"
-        },
-        "subject": {
-          "reference": "urn:uuid:1d2825b1-9754-44a5-8065-a9a0b7fdc4de",
-          "type": "Patient"
-        },
-        "effectiveDateTime": "2023-11-15T00:00:00+00:00",
-        "performer": [
-          {
-            "reference": "urn:uuid:1d2825b1-9754-44a5-8065-a9a0b7fdc4de",
-            "type": "Patient"
-          }
-        ],
-        "valueQuantity": {
-          "value": 175,
-          "unit": "cm",
-          "system": "http://unitsofmeasure.org",
-          "code": "cm"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:67172137-504d-492c-b45a-ce150b254f92",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "67172137-504d-492c-b45a-ce150b254f92",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "Laboratory"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "718-7",
-              "display": "Hemoglobin [Mass/volume] in Blood"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "urn:uuid:1d2825b1-9754-44a5-8065-a9a0b7fdc4de"
-        },
-        "effectiveDateTime": "2023-11-15T00:00:00+00:00",
-        "issued": "2023-11-15T00:00:00.000+00:00",
-        "performer": [
-          {
-            "reference": "urn:uuid:1c9ae8c3-7e20-41aa-ae0c-c703bf6cb1dd"
-          }
-        ],
-        "valueQuantity": {
-          "value": 14.5,
-          "unit": "g/dL",
-          "system": "http://unitsofmeasure.org"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:a5a624d6-7e73-4400-9e03-46c5dd9a551d",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "a5a624d6-7e73-4400-9e03-46c5dd9a551d",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "Laboratory"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "6690-2",
-              "display": "White blood cell (WBC) count, Blood"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "urn:uuid:1d2825b1-9754-44a5-8065-a9a0b7fdc4de"
-        },
-        "effectiveDateTime": "2023-11-15T00:00:00+00:00",
-        "issued": "2023-11-15T00:00:00.000+00:00",
-        "performer": [
-          {
-            "reference": "urn:uuid:1c9ae8c3-7e20-41aa-ae0c-c703bf6cb1dd"
-          }
-        ],
-        "valueQuantity": {
-          "value": 7.5,
-          "unit": "10*3/uL",
-          "system": "http://unitsofmeasure.org"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:1ab59adb-6d14-4244-bbb4-92fa1c2331b3",
-      "resource": {
-        "resourceType": "DiagnosticReport",
-        "id": "1ab59adb-6d14-4244-bbb4-92fa1c2331b3",
-        "meta": {
-          "profile": [
-            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/DiagnosticReportLab"
-          ]
-        },
-        "text": {
-          "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Diagnostic Report</div>"
-        },
-        "status": "final",
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "11502-2",
-              "display": "Laboratory report"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "urn:uuid:1d2825b1-9754-44a5-8065-a9a0b7fdc4de",
-          "type": "Patient",
-          "display": "John Doe"
-        },
-        "effectiveDateTime": "2023-11-15T00:00:00+00:00",
-        "issued": "2023-11-15T00:00:00.000+00:00",
-        "resultsInterpreter": [
-          {
-            "reference": "urn:uuid:1c9ae8c3-7e20-41aa-ae0c-c703bf6cb1dd",
-            "type": "Practitioner"
-          }
-        ],
-        "result": [
-          {
-            "reference": "urn:uuid:67172137-504d-492c-b45a-ce150b254f92"
-          },
-          {
-            "reference": "urn:uuid:a5a624d6-7e73-4400-9e03-46c5dd9a551d"
-          }
-        ],
-        "conclusion": "Laboratory Results"
+        } ]
+      } ],
+      "totalNet": {
+        "value": 500.0,
+        "currency": "INR"
+      },
+      "totalGross": {
+        "value": 500.0,
+        "currency": "INR"
       }
     }
-  ]
+  }, {
+    "fullUrl": "urn:uuid:b6cc2417-ff6d-4584-8a96-10f154363e51",
+    "resource": {
+      "resourceType": "ChargeItem",
+      "id": "b6cc2417-ff6d-4584-8a96-10f154363e51",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/ChargeItem" ]
+      },
+      "status": "billed",
+      "code": {
+        "coding": [ {
+          "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-billing-codes",
+          "code": "05",
+          "display": "Medicines"
+        } ],
+        "text": "OP Consultation Fee"
+      },
+      "subject": {
+        "reference": "urn:uuid:a4b5d755-dd0b-4f40-a022-7e4defdef8be"
+      },
+      "quantity": {
+        "value": 1
+      },
+      "productCodeableConcept": {
+        "text": "OP Consultation Fee"
+      }
+    }
+  } ]
 }
