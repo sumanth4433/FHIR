@@ -1,0 +1,16 @@
+{
+    "patientId": "P123",
+    "patientName": "John Doe",
+    "doctorName": "Dr. Hospital",
+    "visitDate": "2023-11-15",
+    "admissionDate": "2023-11-10",
+    "dischargeDate": "2023-11-15",
+    "diagnosis_list": [
+        {
+            "code": "38341003",
+            "display": "Hypertension",
+            "text": "Essential Hypertension"
+        }
+    ],
+    "dischargeAdvice": "Avoid salt, take prescribed medications."
+}

@@ -1,0 +1,20 @@
+{
+    "patientId": "P123",
+    "patientName": "John Doe",
+    "doctorName": "Dr. Wellness",
+    "visitDate": "2023-11-15",
+    "observation_list": [
+        {
+            "observationType": "Body Weight",
+            "observationCode": "29463-7",
+            "value": "70",
+            "unit": "kg"
+        },
+        {
+            "observationType": "Body Height",
+            "observationCode": "8302-2",
+            "value": "175",
+            "unit": "cm"
+        }
+    ]
+}

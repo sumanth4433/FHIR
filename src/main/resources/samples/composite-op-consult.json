@@ -1,0 +1,73 @@
+{
+    "patientId": "P123",
+    "patientName": "John Doe",
+    "doctorName": "Dr. Smith",
+    "visitDate": "2023-11-15",
+    "prescription": {
+        "diagnosis": "Common Cold",
+        "diagnosisCode": "82272006",
+        "medication_list": [
+            {
+                "medicationName": "Acetaminophen 500 mg oral tablet",
+                "medicationCode": "322236009",
+                "dosageInstruction": "Once daily after food"
+            }
+        ]
+    },
+    "labReport": {
+        "test_list": [
+            {
+                "testName": "Hemoglobin [Mass/volume] in Blood",
+                "loincCode": "718-7",
+                "resultValue": "14.5",
+                "unit": "g/dL"
+            },
+            {
+                "testName": "White blood cell (WBC) count, Blood",
+                "loincCode": "6690-2",
+                "resultValue": "7.5",
+                "unit": "10*3/uL"
+            }
+        ]
+    },
+    "opConsult": {
+        "admissionDate": "2023-11-10",
+        "dischargeDate": "2023-11-15",
+        "diagnosis_list": [
+            {
+                "code": "38341003",
+                "display": "Hypertension",
+                "text": "Essential Hypertension"
+            }
+        ],
+        "dischargeAdvice": "Avoid salt, take prescribed medications."
+    },
+    "wellnessRecord": {
+        "observation_list": [
+            {
+                "observationType": "Body Weight",
+                "observationCode": "29463-7",
+                "value": "70",
+                "unit": "kg"
+            },
+            {
+                "observationType": "Body Height",
+                "observationCode": "8302-2",
+                "value": "175",
+                "unit": "cm"
+            }
+        ]
+    },
+    "dischargeSummary": {
+        "admissionDate": "2023-11-10",
+        "dischargeDate": "2023-11-15",
+        "diagnosis_list": [
+            {
+                "code": "38341003",
+                "display": "Hypertension",
+                "text": "Essential Hypertension"
+            }
+        ],
+        "dischargeAdvice": "Avoid salt, take prescribed medications."
+    }
+}

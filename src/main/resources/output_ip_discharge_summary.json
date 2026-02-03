@@ -1,0 +1,531 @@
+{
+  "resourceType": "Bundle",
+  "id": "7eff3f57-3484-46e2-91c6-a7456dd897e1",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2026-01-24T12:00:55.525+00:00",
+    "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/DocumentBundle" ]
+  },
+  "identifier": {
+    "system": "http://hip.in",
+    "value": "5a290f5a-82ee-4353-b167-316709941b97"
+  },
+  "type": "document",
+  "timestamp": "2026-01-24T12:00:55.525+00:00",
+  "entry": [ {
+    "fullUrl": "urn:uuid:a4b931ff-aa68-4a22-b9fb-8d35813a774a",
+    "resource": {
+      "resourceType": "Composition",
+      "id": "a4b931ff-aa68-4a22-b9fb-8d35813a774a",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/DischargeSummaryRecord" ]
+      },
+      "status": "final",
+      "type": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "373942005",
+          "display": "Discharge summary"
+        } ]
+      },
+      "subject": {
+        "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+        "type": "Patient"
+      },
+      "encounter": {
+        "reference": "urn:uuid:02c7e8d0-978a-4029-9cd0-5c13a28c2739",
+        "type": "Encounter"
+      },
+      "date": "2020-05-01T00:00:00+00:00",
+      "author": [ {
+        "reference": "urn:uuid:d4d22930-ceba-413c-ab4a-4e16fde8ddc8",
+        "type": "Practitioner"
+      } ],
+      "title": "Discharge Summary",
+      "custodian": {
+        "reference": "urn:uuid:206e5ec0-fb58-493b-b508-f7b079ea7edd",
+        "type": "Organization"
+      },
+      "section": [ {
+        "title": "Chief complaints",
+        "code": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "422843007",
+            "display": "Chief complaint section"
+          } ]
+        },
+        "entry": [ {
+          "reference": "urn:uuid:34330d5b-4e16-4312-aadd-17639edc5442",
+          "type": "Condition"
+        } ]
+      }, {
+        "title": "Medical History",
+        "code": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "1003642006",
+            "display": "Past medical history section"
+          } ]
+        },
+        "entry": [ {
+          "reference": "urn:uuid:d63288c1-7f03-4ed1-8482-1c22a1be7ab4",
+          "type": "Condition"
+        } ]
+      }, {
+        "title": "Investigations",
+        "code": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "721981007",
+            "display": "Diagnostic studies report"
+          } ]
+        },
+        "entry": [ {
+          "reference": "urn:uuid:0f62d947-aeb4-4c3f-ace0-0b3697ee0d1c",
+          "type": "DiagnosticReport"
+        } ]
+      }, {
+        "title": "Procedures",
+        "code": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "1003640003",
+            "display": "History of past procedure section"
+          } ]
+        },
+        "entry": [ {
+          "reference": "urn:uuid:9b78a6ec-0dc8-4c61-8ac1-7c46099d2046",
+          "type": "Procedure"
+        } ]
+      }, {
+        "title": "Medications",
+        "code": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "1003606003",
+            "display": "Medication history section"
+          } ]
+        },
+        "entry": [ {
+          "reference": "urn:uuid:81b18afe-b274-4970-acb9-f68b71901580",
+          "type": "MedicationRequest"
+        } ]
+      }, {
+        "title": "Care Plan",
+        "code": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "734163000",
+            "display": "Care plan"
+          } ]
+        },
+        "entry": [ {
+          "reference": "urn:uuid:ceb4f91d-7bda-40b0-b9ae-ed215862dd47",
+          "type": "CarePlan"
+        } ]
+      }, {
+        "title": "Document Reference",
+        "code": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "373942005",
+            "display": "Discharge summary"
+          } ]
+        },
+        "entry": [ {
+          "reference": "urn:uuid:f4b1414e-2d49-42dd-ad02-55d1cd1decff",
+          "type": "DocumentReference"
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "c312c50b-ea83-479f-9fab-667255fbf54f",
+      "meta": {
+        "versionId": "1",
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Patient" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR",
+            "display": "Medical record number"
+          } ]
+        },
+        "system": "https://healthid.ndhm.gov.in",
+        "value": "22-7225-4829-5255"
+      } ],
+      "name": [ {
+        "text": "ABC"
+      } ],
+      "gender": "male",
+      "birthDate": "1981-01-12"
+    }
+  }, {
+    "fullUrl": "urn:uuid:d4d22930-ceba-413c-ab4a-4e16fde8ddc8",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "d4d22930-ceba-413c-ab4a-4e16fde8ddc8",
+      "meta": {
+        "versionId": "1",
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Practitioner" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "Medical License number"
+          } ]
+        },
+        "system": "https://doctor.ndhm.gov.in",
+        "value": "21-1521-3828-3227"
+      } ],
+      "name": [ {
+        "text": "DEF"
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:206e5ec0-fb58-493b-b508-f7b079ea7edd",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "206e5ec0-fb58-493b-b508-f7b079ea7edd",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Organization" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "XX",
+            "display": "Organization identifier"
+          } ]
+        },
+        "system": "https://facility.ndhm.gov.in",
+        "value": "IN0000"
+      } ],
+      "name": "UVW Hospital"
+    }
+  }, {
+    "fullUrl": "urn:uuid:02c7e8d0-978a-4029-9cd0-5c13a28c2739",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "02c7e8d0-978a-4029-9cd0-5c13a28c2739",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter"
+      },
+      "subject": {
+        "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+        "type": "Patient"
+      },
+      "participant": [ {
+        "individual": {
+          "reference": "urn:uuid:d4d22930-ceba-413c-ab4a-4e16fde8ddc8",
+          "type": "Practitioner"
+        }
+      } ],
+      "period": {
+        "start": "2020-04-20T00:00:00+00:00",
+        "end": "2020-05-01T00:00:00+00:00"
+      },
+      "hospitalization": {
+        "dischargeDisposition": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+            "code": "home",
+            "display": "home"
+          } ]
+        }
+      },
+      "serviceProvider": {
+        "reference": "urn:uuid:206e5ec0-fb58-493b-b508-f7b079ea7edd",
+        "type": "Organization"
+      }
+    }
+  }, {
+    "fullUrl": "urn:uuid:34330d5b-4e16-4312-aadd-17639edc5442",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "34330d5b-4e16-4312-aadd-17639edc5442",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Condition" ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "44054006",
+          "display": "Diabetes mellitus type 2"
+        } ],
+        "text": "T2DM"
+      },
+      "subject": {
+        "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+        "type": "Patient"
+      },
+      "recordedDate": "2020-04-20T00:00:00+00:00"
+    }
+  }, {
+    "fullUrl": "urn:uuid:d63288c1-7f03-4ed1-8482-1c22a1be7ab4",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "d63288c1-7f03-4ed1-8482-1c22a1be7ab4",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Condition" ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "440700005",
+          "display": "History of aortoiliac atherosclerosis"
+        } ],
+        "text": "Patient complained about pain in left arm"
+      },
+      "subject": {
+        "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+        "type": "Patient"
+      },
+      "recordedDate": "2020-04-20T00:00:00+00:00"
+    }
+  }, {
+    "fullUrl": "urn:uuid:6153e366-7012-4bed-a6fc-ba37358f8c66",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "6153e366-7012-4bed-a6fc-ba37358f8c66",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Observation", "https://nrces.in/ndhm/fhir/r4/StructureDefinition/ObservationVitalSigns" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "2093-3",
+          "display": "Cholesterol [Mass/volume] in Serum or Plasma"
+        } ],
+        "text": "Cholesterol [Mass/volume] in Serum or Plasma"
+      },
+      "subject": {
+        "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+        "type": "Patient"
+      },
+      "effectiveDateTime": "2020-04-20T00:00:00+00:00",
+      "performer": [ {
+        "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+        "type": "Patient"
+      } ],
+      "valueQuantity": {
+        "value": 156.0,
+        "unit": "mg/dL",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg/dL"
+      }
+    }
+  }, {
+    "fullUrl": "urn:uuid:9e3fce18-1103-40ab-960f-cee08d2b0f5f",
+    "resource": {
+      "resourceType": "Specimen",
+      "id": "9e3fce18-1103-40ab-960f-cee08d2b0f5f",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Specimen" ]
+      },
+      "type": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "119364003",
+          "display": "Serum specimen"
+        } ]
+      },
+      "subject": {
+        "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+        "type": "Patient"
+      },
+      "receivedTime": "2020-04-20T00:00:00+00:00",
+      "collection": {
+        "collectedDateTime": "2020-04-20T00:00:00+00:00"
+      }
+    }
+  }, {
+    "fullUrl": "urn:uuid:0f62d947-aeb4-4c3f-ace0-0b3697ee0d1c",
+    "resource": {
+      "resourceType": "DiagnosticReport",
+      "id": "0f62d947-aeb4-4c3f-ace0-0b3697ee0d1c",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/DiagnosticReportLab" ]
+      },
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "24331-1",
+          "display": "Lipid 1996 panel - Serum or Plasma"
+        } ]
+      },
+      "subject": {
+        "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+        "type": "Patient"
+      },
+      "issued": "2020-04-20T00:00:00.000+00:00",
+      "performer": [ {
+        "reference": "urn:uuid:206e5ec0-fb58-493b-b508-f7b079ea7edd",
+        "type": "Organization"
+      } ],
+      "resultsInterpreter": [ {
+        "reference": "urn:uuid:d4d22930-ceba-413c-ab4a-4e16fde8ddc8",
+        "type": "Practitioner"
+      } ],
+      "specimen": [ {
+        "reference": "urn:uuid:9e3fce18-1103-40ab-960f-cee08d2b0f5f",
+        "type": "Specimen"
+      } ],
+      "result": [ {
+        "reference": "urn:uuid:6153e366-7012-4bed-a6fc-ba37358f8c66",
+        "type": "Observation"
+      } ],
+      "conclusion": "Elevated cholesterol/high density lipoprotein ratio"
+    }
+  }, {
+    "fullUrl": "urn:uuid:9b78a6ec-0dc8-4c61-8ac1-7c46099d2046",
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "9b78a6ec-0dc8-4c61-8ac1-7c46099d2046",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Procedure" ]
+      },
+      "status": "completed",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "36969009",
+          "display": "Placement of stent in coronary artery"
+        } ],
+        "text": "Complication: Bleeding"
+      },
+      "subject": {
+        "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+        "type": "Patient"
+      },
+      "performedDateTime": "2019-05-12T00:00:00+00:00"
+    }
+  }, {
+    "fullUrl": "urn:uuid:81b18afe-b274-4970-acb9-f68b71901580",
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "81b18afe-b274-4970-acb9-f68b71901580",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/MedicationRequest" ]
+      },
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "765082007",
+          "display": "Nitroglycerin 5 mg buccal tablet"
+        } ],
+        "text": "Nitroglycerin 5 mg buccal tablet"
+      },
+      "subject": {
+        "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+        "type": "Patient"
+      },
+      "authoredOn": "2020-05-01T00:00:00+00:00",
+      "requester": {
+        "reference": "urn:uuid:d4d22930-ceba-413c-ab4a-4e16fde8ddc8",
+        "type": "Practitioner"
+      },
+      "dosageInstruction": [ {
+        "text": "One tablet at once"
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:ceb4f91d-7bda-40b0-b9ae-ed215862dd47",
+    "resource": {
+      "resourceType": "CarePlan",
+      "id": "ceb4f91d-7bda-40b0-b9ae-ed215862dd47",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/CarePlan" ]
+      },
+      "status": "active",
+      "intent": "plan",
+      "title": "Care plan",
+      "description": "Follow up plan",
+      "subject": {
+        "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+        "type": "Patient"
+      },
+      "created": "2020-05-01T00:00:00+00:00"
+    }
+  }, {
+    "fullUrl": "urn:uuid:7b3d424d-ffbe-4336-9297-2c1e0c670c0c",
+    "resource": {
+      "resourceType": "Appointment",
+      "id": "7b3d424d-ffbe-4336-9297-2c1e0c670c0c",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Appointment" ]
+      },
+      "status": "booked",
+      "description": "Discussion on the results of your recent Lab Test",
+      "start": "2020-07-12T00:00:00.000+00:00",
+      "end": "2020-07-12T00:30:00.000+00:00",
+      "participant": [ {
+        "actor": {
+          "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+          "type": "Patient"
+        },
+        "status": "accepted"
+      }, {
+        "actor": {
+          "reference": "urn:uuid:d4d22930-ceba-413c-ab4a-4e16fde8ddc8",
+          "type": "Practitioner"
+        },
+        "status": "accepted"
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:f4b1414e-2d49-42dd-ad02-55d1cd1decff",
+    "resource": {
+      "resourceType": "DocumentReference",
+      "id": "f4b1414e-2d49-42dd-ad02-55d1cd1decff",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/DocumentReference" ]
+      },
+      "status": "current",
+      "docStatus": "final",
+      "type": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "4241000179101",
+          "display": "Laboratory report"
+        } ]
+      },
+      "subject": {
+        "reference": "urn:uuid:c312c50b-ea83-479f-9fab-667255fbf54f",
+        "type": "Patient"
+      },
+      "date": "2020-05-01T00:00:00.000+00:00",
+      "content": [ {
+        "attachment": {
+          "contentType": "application/pdf",
+          "data": "JVBERi0xLjcKCjEgMCBvYmogICUgZW50cnkgcG9pbnQKPDwKICAvVHlwZSAvQ2F0YWxvZwogIC9QYWdlcyAyIDAgUgo+PgplbmRvYmoKCjIgMCBvYmoKPDwKICAvVHlwZSAvUGFnZXwKICAvTWVkaWFCb3ggWyAwIDAgMjAwIDIwMCBdCiAgL0NvdW50IDEKICAvS2lkcyBbIDMgMCBSIF0KPj4KZW5kb2JqCgozIDAgb2JqCjw8CiAgL1R5cGUgL1BhZ2UKICAvUGFyZW50IDIgMCBSCj4+CmVuZG9iagoKeHJlZgowIDQKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDEwIDAwMDAwIG4gCjAwMDAwMDAwNjAgMDAwMDAgbiAKMDAwMDAwMDExMSAwMDAwMIG4gCnRyYWlsZXIKPDwKICAvU2l6ZSA0CiAgL1Jvb3QgMSAwIFIKPj4Kc3RhcnR4cmVmCjE3MQolJUVPRg=",
+          "title": "Discharge Summary Document"
+        }
+      } ]
+    }
+  } ]
+}

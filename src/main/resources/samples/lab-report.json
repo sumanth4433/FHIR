@@ -1,0 +1,19 @@
+{
+    "patientId": "P123",
+    "patientName": "John Doe",
+    "visitDate": "2023-11-15",
+    "test_list": [
+        {
+            "testName": "Hemoglobin [Mass/volume] in Blood",
+            "loincCode": "718-7",
+            "resultValue": "14.5",
+            "unit": "g/dL"
+        },
+        {
+            "testName": "White blood cell (WBC) count, Blood",
+            "loincCode": "6690-2",
+            "resultValue": "7.5",
+            "unit": "10*3/uL"
+        }
+    ]
+}

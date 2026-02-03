@@ -1,0 +1,15 @@
+{
+    "patientId": "P123",
+    "patientName": "John Doe",
+    "doctorName": "Dr. Smith",
+    "visitDate": "2023-11-15",
+    "diagnosis": "Common Cold",
+    "diagnosisCode": "82272006",
+    "medication_list": [
+        {
+            "medicationName": "Acetaminophen 500 mg oral tablet",
+            "medicationCode": "322236009",
+            "dosageInstruction": "Once daily after food"
+        }
+    ]
+}

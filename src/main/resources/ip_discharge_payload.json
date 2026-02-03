@@ -1,0 +1,74 @@
+{
+    "patientId": "22-7225-4829-5255",
+    "patientName": "ABC",
+    "patientGender": "Male",
+    "patientDob": "1981-01-12",
+    "patientMobile": "+919818512600",
+    "encounterId": "S100",
+    "admissionDate": "2020-04-20",
+    "dischargeDate": "2020-05-01",
+    "dischargeDisposition": "home",
+    "doctorName": "DEF",
+    "doctorLicense": "21-1521-3828-3227",
+    "hospitalName": "UVW Hospital",
+    "chiefComplaints": [
+        {
+            "code": "44054006",
+            "display": "Diabetes mellitus type 2",
+            "text": "T2DM",
+            "clinicalStatus": "active"
+        }
+    ],
+    "medicalHistory": [
+        {
+            "type": "Condition",
+            "code": "440700005",
+            "display": "History of aortoiliac atherosclerosis",
+            "text": "Patient complained about pain in left arm"
+        }
+    ],
+    "investigations": [
+        {
+            "title": "Lipid 1996 panel - Serum or Plasma",
+            "code": "24331-1",
+            "date": "2020-09-29",
+            "results": [
+                {
+                    "testName": "Cholesterol [Mass/volume] in Serum or Plasma",
+                    "code": "2093-3",
+                    "value": "156",
+                    "unit": "mg/dL"
+                }
+            ],
+            "conclusion": "Elevated cholesterol/high density lipoprotein ratio"
+        }
+    ],
+    "procedures": [
+        {
+            "procedureName": "Placement of stent in coronary artery",
+            "code": "36969009",
+            "date": "2019-05-12",
+            "note": "Complication: Bleeding"
+        }
+    ],
+    "medications": [
+        {
+            "medicationName": "Nitroglycerin 5 mg buccal tablet",
+            "code": "765082007",
+            "dosage": "One tablet at once"
+        }
+    ],
+    "carePlan": {
+        "title": "Care plan",
+        "date": "2020-05-01",
+        "details": "Follow up plan",
+        "followUp": {
+            "date": "2020-07-12",
+            "reason": "Discussion on the results of your recent Lab Test"
+        }
+    },
+    "documentReference": {
+        "title": "Discharge Summary Document",
+        "base64Data": "JVBERi0xLjcKCjEgMCBvYmogICUgZW50cnkgcG9pbnQKPDwKICAvVHlwZSAvQ2F0YWxvZwogIC9QYWdlcyAyIDAgUgo+PgplbmRvYmoKCjIgMCBvYmoKPDwKICAvVHlwZSAvUGFnZXwKICAvTWVkaWFCb3ggWyAwIDAgMjAwIDIwMCBdCiAgL0NvdW50IDEKICAvS2lkcyBbIDMgMCBSIF0KPj4KZW5kb2JqCgozIDAgb2JqCjw8CiAgL1R5cGUgL1BhZ2UKICAvUGFyZW50IDIgMCBSCj4+CmVuZG9iagoKeHJlZgowIDQKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDEwIDAwMDAwIG4gCjAwMDAwMDAwNjAgMDAwMDAgbiAKMDAwMDAwMDExMSAwMDAwMIG4gCnRyYWlsZXIKPDwKICAvU2l6ZSA0CiAgL1Jvb3QgMSAwIFIKPj4Kc3RhcnR4cmVmCjE3MQolJUVPRg="
+    }
+}

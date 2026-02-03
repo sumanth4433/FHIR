@@ -1,0 +1,13 @@
+{
+    "patientId": "P123",
+    "patientName": "John Doe",
+    "doctorName": "Dr. Clinic",
+    "visitDate": "2023-11-15",
+    "immunization_list": [
+        {
+            "vaccineName": " Hepatitis A vaccine",
+            "vaccineCode": "871751006",
+            "doseDate": "2023-11-15"
+        }
+    ]
+}
