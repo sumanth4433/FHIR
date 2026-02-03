@@ -30,3 +30,5 @@ logs/
 # Backup files
 *.bak
 *.old
+
+validator_cli.jar
