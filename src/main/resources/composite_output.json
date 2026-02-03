@@ -1,0 +1,467 @@
+{
+  "resourceType": "Bundle",
+  "id": "05cefdeb-88f0-43a1-ab51-75090fca36ff",
+  "meta": {
+    "versionId": "1",
+    "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/DocumentBundle" ]
+  },
+  "identifier": {
+    "system": "https://www.xyz-hospital.com/bundles",
+    "value": "c999497f-3103-478d-9bd7-c20a24182cd9"
+  },
+  "type": "document",
+  "timestamp": "2024-03-20T00:00:00.000+00:00",
+  "entry": [ {
+    "fullUrl": "urn:uuid:dad57c07-5b82-45cd-ab4c-85ae9173817d",
+    "resource": {
+      "resourceType": "Composition",
+      "id": "dad57c07-5b82-45cd-ab4c-85ae9173817d",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/OPConsultRecord" ]
+      },
+      "status": "final",
+      "type": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "371530004",
+          "display": "Clinical consultation report"
+        } ]
+      },
+      "subject": {
+        "reference": "urn:uuid:e64889cd-a255-47f9-ab56-d107f968bce2",
+        "type": "Patient"
+      },
+      "encounter": {
+        "reference": "urn:uuid:e4938a77-e417-4f6a-9398-cf6a3f8fa9fc",
+        "type": "Encounter"
+      },
+      "date": "2024-03-20T00:00:00+00:00",
+      "author": [ {
+        "reference": "urn:uuid:9e5ab038-8a13-4681-a025-3e834355f704",
+        "type": "Practitioner"
+      } ],
+      "title": "OP Consult Record (Composite)",
+      "custodian": {
+        "reference": "urn:uuid:9f634ff0-73f6-4beb-a058-ce01de9055e2",
+        "type": "Organization"
+      },
+      "section": [ {
+        "title": "Diagnosis",
+        "entry": [ {
+          "reference": "urn:uuid:7c3cf643-e900-4b4e-b9b0-4c8dd3b61991",
+          "type": "Condition"
+        } ]
+      }, {
+        "title": "Allergies",
+        "code": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "722446000",
+            "display": "Allergy record"
+          } ]
+        },
+        "entry": [ {
+          "reference": "urn:uuid:6654be80-423f-42e4-a6d2-ef51e7f01858",
+          "type": "AllergyIntolerance"
+        } ]
+      }, {
+        "title": "Billing",
+        "entry": [ {
+          "reference": "urn:uuid:204dfc50-b5f1-4757-b40c-07bf825a3a38",
+          "type": "Invoice"
+        } ]
+      }, {
+        "title": "Vital Signs",
+        "code": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "46680005",
+            "display": "Vital signs"
+          } ]
+        },
+        "entry": [ {
+          "reference": "urn:uuid:d7429f8a-47e7-4b05-a8c2-7722ca17abae",
+          "type": "Observation"
+        } ]
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:e64889cd-a255-47f9-ab56-d107f968bce2",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "e64889cd-a255-47f9-ab56-d107f968bce2",
+      "meta": {
+        "versionId": "1",
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Patient" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR",
+            "display": "Medical record number"
+          } ]
+        },
+        "system": "https://healthid.ndhm.gov.in",
+        "value": "22-7225-4829-5255"
+      } ],
+      "name": [ {
+        "text": "Aarav Sharma"
+      } ],
+      "gender": "male",
+      "birthDate": "1985-06-15"
+    }
+  }, {
+    "fullUrl": "urn:uuid:9e5ab038-8a13-4681-a025-3e834355f704",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "9e5ab038-8a13-4681-a025-3e834355f704",
+      "meta": {
+        "versionId": "1",
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Practitioner" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "Medical License number"
+          } ]
+        },
+        "system": "https://doctor.ndhm.gov.in",
+        "value": "LIC-99999"
+      } ],
+      "name": [ {
+        "text": "Dr. Priya Desai"
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:e4938a77-e417-4f6a-9398-cf6a3f8fa9fc",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "e4938a77-e417-4f6a-9398-cf6a3f8fa9fc",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter"
+      },
+      "subject": {
+        "reference": "urn:uuid:e64889cd-a255-47f9-ab56-d107f968bce2",
+        "type": "Patient"
+      },
+      "participant": [ {
+        "individual": {
+          "reference": "urn:uuid:9e5ab038-8a13-4681-a025-3e834355f704",
+          "type": "Practitioner"
+        }
+      } ],
+      "period": {
+        "start": "2024-03-20T00:00:00+00:00",
+        "end": "2024-03-20T00:00:00+00:00"
+      },
+      "serviceProvider": {
+        "reference": "urn:uuid:9f634ff0-73f6-4beb-a058-ce01de9055e2",
+        "type": "Organization"
+      }
+    }
+  }, {
+    "fullUrl": "urn:uuid:9f634ff0-73f6-4beb-a058-ce01de9055e2",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "9f634ff0-73f6-4beb-a058-ce01de9055e2",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Organization" ]
+      },
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "XX",
+            "display": "Organization identifier"
+          } ]
+        },
+        "system": "https://facility.ndhm.gov.in",
+        "value": "IN0000"
+      } ],
+      "name": "City General Hospital"
+    }
+  }, {
+    "fullUrl": "urn:uuid:7c3cf643-e900-4b4e-b9b0-4c8dd3b61991",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "7c3cf643-e900-4b4e-b9b0-4c8dd3b61991",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Condition" ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "386661006",
+          "display": "Fever"
+        } ],
+        "text": "High grade fever"
+      },
+      "subject": {
+        "reference": "urn:uuid:e64889cd-a255-47f9-ab56-d107f968bce2",
+        "type": "Patient"
+      },
+      "recordedDate": "2024-03-20T00:00:00+00:00"
+    }
+  }, {
+    "fullUrl": "urn:uuid:d7429f8a-47e7-4b05-a8c2-7722ca17abae",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "d7429f8a-47e7-4b05-a8c2-7722ca17abae",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Observation", "https://nrces.in/ndhm/fhir/r4/StructureDefinition/ObservationVitalSigns", "http://hl7.org/fhir/StructureDefinition/bp" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        } ]
+      },
+      "subject": {
+        "reference": "urn:uuid:e64889cd-a255-47f9-ab56-d107f968bce2",
+        "type": "Patient"
+      },
+      "effectiveDateTime": "2024-03-20T00:00:00+00:00",
+      "performer": [ {
+        "reference": "urn:uuid:e64889cd-a255-47f9-ab56-d107f968bce2",
+        "type": "Patient"
+      } ],
+      "component": [ {
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "8480-6",
+            "display": "Systolic blood pressure"
+          } ]
+        },
+        "valueQuantity": {
+          "value": 120.0,
+          "unit": "mm[Hg]",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }, {
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "8462-4",
+            "display": "Diastolic blood pressure"
+          } ]
+        },
+        "valueQuantity": {
+          "value": 80.0,
+          "unit": "mm[Hg]",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "urn:uuid:6654be80-423f-42e4-a6d2-ef51e7f01858",
+    "resource": {
+      "resourceType": "AllergyIntolerance",
+      "id": "6654be80-423f-42e4-a6d2-ef51e7f01858",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/AllergyIntolerance" ]
+      },
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+          "code": "active",
+          "display": "Active"
+        } ]
+      },
+      "verificationStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+          "code": "confirmed",
+          "display": "Confirmed"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "295036000",
+          "display": "Angiotensin-converting-enzyme inhibitor allergy"
+        } ]
+      },
+      "patient": {
+        "reference": "urn:uuid:e64889cd-a255-47f9-ab56-d107f968bce2",
+        "type": "Patient"
+      },
+      "recordedDate": "2024-03-20T00:00:00+00:00",
+      "recorder": {
+        "reference": "urn:uuid:9e5ab038-8a13-4681-a025-3e834355f704",
+        "type": "Practitioner"
+      }
+    }
+  }, {
+    "fullUrl": "urn:uuid:204dfc50-b5f1-4757-b40c-07bf825a3a38",
+    "resource": {
+      "resourceType": "Invoice",
+      "id": "204dfc50-b5f1-4757-b40c-07bf825a3a38",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Invoice" ]
+      },
+      "identifier": [ {
+        "value": "090f0a01-f9b5-41d6-adbe-8ec77eb911e4"
+      } ],
+      "status": "issued",
+      "type": {
+        "coding": [ {
+          "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-billing-codes",
+          "code": "01",
+          "display": "Pharmacy"
+        } ]
+      },
+      "subject": {
+        "reference": "urn:uuid:e64889cd-a255-47f9-ab56-d107f968bce2"
+      },
+      "date": "2024-03-20T00:00:00+00:00",
+      "lineItem": [ {
+        "sequence": 1,
+        "chargeItemReference": {
+          "reference": "urn:uuid:ddcc8044-c9df-42c6-9edc-6e786e6f3631"
+        },
+        "priceComponent": [ {
+          "type": "base",
+          "code": {
+            "coding": [ {
+              "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code": "01",
+              "display": "Rate"
+            } ]
+          },
+          "amount": {
+            "value": 500.0,
+            "currency": "INR"
+          }
+        }, {
+          "type": "informational",
+          "code": {
+            "coding": [ {
+              "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code": "00",
+              "display": "MRP"
+            } ]
+          },
+          "amount": {
+            "value": 500.0,
+            "currency": "INR"
+          }
+        } ]
+      }, {
+        "sequence": 2,
+        "chargeItemReference": {
+          "reference": "urn:uuid:7cf744ea-2dac-41ff-a8e0-22b7a2bdeaa9"
+        },
+        "priceComponent": [ {
+          "type": "base",
+          "code": {
+            "coding": [ {
+              "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code": "01",
+              "display": "Rate"
+            } ]
+          },
+          "amount": {
+            "value": 50.0,
+            "currency": "INR"
+          }
+        }, {
+          "type": "informational",
+          "code": {
+            "coding": [ {
+              "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code": "00",
+              "display": "MRP"
+            } ]
+          },
+          "amount": {
+            "value": 50.0,
+            "currency": "INR"
+          }
+        } ]
+      } ],
+      "totalNet": {
+        "value": 550.0,
+        "currency": "INR"
+      },
+      "totalGross": {
+        "value": 550.0,
+        "currency": "INR"
+      }
+    }
+  }, {
+    "fullUrl": "urn:uuid:ddcc8044-c9df-42c6-9edc-6e786e6f3631",
+    "resource": {
+      "resourceType": "ChargeItem",
+      "id": "ddcc8044-c9df-42c6-9edc-6e786e6f3631",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/ChargeItem" ]
+      },
+      "status": "billed",
+      "code": {
+        "coding": [ {
+          "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-billing-codes",
+          "code": "05",
+          "display": "Medicines"
+        } ],
+        "text": "Consultation Fee"
+      },
+      "subject": {
+        "reference": "urn:uuid:e64889cd-a255-47f9-ab56-d107f968bce2"
+      },
+      "quantity": {
+        "value": 1
+      },
+      "productCodeableConcept": {
+        "text": "Consultation Fee"
+      }
+    }
+  }, {
+    "fullUrl": "urn:uuid:7cf744ea-2dac-41ff-a8e0-22b7a2bdeaa9",
+    "resource": {
+      "resourceType": "ChargeItem",
+      "id": "7cf744ea-2dac-41ff-a8e0-22b7a2bdeaa9",
+      "meta": {
+        "profile": [ "https://nrces.in/ndhm/fhir/r4/StructureDefinition/ChargeItem" ]
+      },
+      "status": "billed",
+      "code": {
+        "coding": [ {
+          "system": "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-billing-codes",
+          "code": "05",
+          "display": "Medicines"
+        } ],
+        "text": "Registration Fee"
+      },
+      "subject": {
+        "reference": "urn:uuid:e64889cd-a255-47f9-ab56-d107f968bce2"
+      },
+      "quantity": {
+        "value": 1
+      },
+      "productCodeableConcept": {
+        "text": "Registration Fee"
+      }
+    }
+  } ]
+}

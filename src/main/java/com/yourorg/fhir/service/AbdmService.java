@@ -399,9 +399,30 @@ public class AbdmService {
             }
         }
 
+        // 6. Process Invoice (New)
+        Invoice invoice = null;
+        if (dto.getInvoice() != null && dto.getInvoice().getLineItems() != null) {
+            java.util.List<ChargeItem> chargeItems = new java.util.ArrayList<>();
+            java.util.List<Double> unitPrices = new java.util.ArrayList<>();
+
+            for (com.yourorg.fhir.dto.InvoiceDTO.LineItem item : dto.getInvoice().getLineItems()) {
+                chargeItems.add(builder.buildChargeItem(patient, item.getItemName(), item.getQuantity()));
+                unitPrices.add(item.getUnitPrice());
+            }
+
+            invoice = builder.buildInvoice(patient, chargeItems, unitPrices, dto.getInvoice().getTotalAmount(),
+                    dto.getInvoice().getCurrency());
+
+            // Add Date (Identifier is added in builder)
+            invoice.setDate(visitDate != null ? visitDate : new Date());
+
+            resources.add(invoice);
+            resources.addAll(chargeItems);
+        }
+
         Composition comp = builder.buildCompositeOPConsultComposition(patient, doc, clinic, enc, condList, medList,
                 allergyList, null,
-                wellnessList, reports, visitDate);
+                wellnessList, reports, invoice, visitDate);
 
         return serialize(wrapInBundle(comp, resources, visitDate));
     }

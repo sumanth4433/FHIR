@@ -1,45 +1,22 @@
 package com.yourorg.fhir.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public class InvoiceDTO {
 
-    @JsonProperty("patient_id")
     private String patientId;
-
-    @JsonProperty("patient_name")
     private String patientName;
-
-    @JsonProperty("patient_gender")
     private String patientGender;
-
-    @JsonProperty("patient_dob")
     private String patientDob;
-
-    @JsonProperty("visit_date")
     private String visitDate;
-
-    @JsonProperty("practitioner_name")
     private String practitionerName;
-
-    @JsonProperty("total_amount")
     private double totalAmount;
-
-    @JsonProperty("currency")
     private String currency; // e.g., "INR"
-
-    @JsonProperty("line_items")
     private List<LineItem> lineItems;
 
     public static class LineItem {
-        @JsonProperty("item_name")
         private String itemName;
-
-        @JsonProperty("quantity")
         private int quantity;
-
-        @JsonProperty("unit_price")
         private double unitPrice;
 
         public String getItemName() {

@@ -15,6 +15,7 @@ public class CompositeRequestDTO {
     private OpConsultDTO opConsult;
     private WellnessRecordDTO wellnessRecord;
     private DischargeSummaryDTO dischargeSummary;
+    private InvoiceDTO invoice;
 
     // Getters and Setters
     public String getPatientId() {
@@ -111,5 +112,13 @@ public class CompositeRequestDTO {
 
     public void setDischargeSummary(DischargeSummaryDTO dischargeSummary) {
         this.dischargeSummary = dischargeSummary;
+    }
+
+    public InvoiceDTO getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(InvoiceDTO invoice) {
+        this.invoice = invoice;
     }
 }

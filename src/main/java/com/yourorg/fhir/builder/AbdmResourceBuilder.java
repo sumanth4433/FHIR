@@ -419,6 +419,7 @@ public class AbdmResourceBuilder {
             java.util.List<Observation> labResults,
             java.util.List<Observation> wellnessObs,
             java.util.List<DiagnosticReport> diagnosticReports,
+            Invoice invoice,
             Date date) {
         Composition comp = new Composition();
         comp.setId(UUID.randomUUID().toString());
@@ -474,12 +475,17 @@ public class AbdmResourceBuilder {
         if (diagnosticReports != null && !diagnosticReports.isEmpty()) {
             Composition.SectionComponent section = comp.addSection();
             section.setTitle("Diagnostic Reports");
-            section.setCode(new CodeableConcept(new Coding(FhirConstants.SYSTEM_SNOMED,
-                    "721981007", "Diagnostic studies report (record artifact)")));
             for (DiagnosticReport dr : diagnosticReports) {
                 section.addEntry(new Reference("urn:uuid:" + dr.getId()).setType("DiagnosticReport"));
             }
-            // Add observations as entries if needed, or rely on DiagnosticReport links.
+        }
+
+        // Invoice Section
+        if (invoice != null) {
+            Composition.SectionComponent section = comp.addSection();
+            section.setTitle("Billing");
+            // No specific LOINC/SNOMED code for Billing section in example
+            section.addEntry(new Reference("urn:uuid:" + invoice.getId()).setType("Invoice"));
         }
 
         // Wellness/Vital Signs Section

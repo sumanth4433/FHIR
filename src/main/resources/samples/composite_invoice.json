@@ -1,0 +1,57 @@
+{
+    "patientId": "22-7225-4829-5255",
+    "patientName": "Aarav Sharma",
+    "visitDate": "2024-03-20",
+    "patientGender": "Male",
+    "patientDob": "1985-06-15",
+    "clinicName": "City General Hospital",
+    "doctorName": "Dr. Priya Desai",
+    "opConsult": {
+        "diagnosis_list": [
+            {
+                "code": "386661006",
+                "display": "Fever",
+                "text": "High grade fever"
+            }
+        ],
+        "allergy_list": [
+            {
+                "code": "295036000",
+                "display": "Angiotensin-converting-enzyme inhibitor allergy",
+                "clinicalStatus": "active"
+            }
+        ]
+    },
+    "wellnessRecord": {
+        "observation_list": [
+            {
+                "observationType": "Vital Signs",
+                "observationCode": "8480-6",
+                "value": "120",
+                "unit": "mm[Hg]"
+            },
+            {
+                "observationType": "Vital Signs",
+                "observationCode": "8462-4",
+                "value": "80",
+                "unit": "mm[Hg]"
+            }
+        ]
+    },
+    "invoice": {
+        "totalAmount": 550.0,
+        "currency": "INR",
+        "lineItems": [
+            {
+                "itemName": "Consultation Fee",
+                "quantity": 1,
+                "unitPrice": 500.0
+            },
+            {
+                "itemName": "Registration Fee",
+                "quantity": 1,
+                "unitPrice": 50.0
+            }
+        ]
+    }
+}
